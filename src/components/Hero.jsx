@@ -2,12 +2,14 @@ import { useState, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import Spline from '@splinetool/react-spline'
 import ModalVideo from './ModalVideo'
+import { useNavigate } from 'react-router-dom'
 
 const headline = 'CLOUDBAR'
 const subline = 'Order real drinks. Delivered in sync. Toast with friends 3,000 miles away.'
 
 export default function Hero() {
   const [open, setOpen] = useState(false)
+  const navigate = useNavigate()
 
   const letters = useMemo(() => headline.split(''), [])
 
@@ -50,15 +52,15 @@ export default function Hero() {
           >
             <button
               className="px-6 md:px-8 py-3 md:py-3.5 rounded-full text-white font-medium bg-[#D97706] hover:scale-[1.03] hover:shadow-[0_0_0_4px_rgba(217,119,6,0.25)] transition-all"
-              onClick={() => window.open('https://form.typeform.com/to/abcd', '_blank')}
+              onClick={() => navigate('/waitlist')}
             >
               Join the Waitlist
             </button>
             <button
               className="px-6 md:px-8 py-3 md:py-3.5 rounded-full text-white/90 font-medium border border-[#0D9488] hover:bg-[#0D9488]/10 backdrop-blur-xl"
-              onClick={() => setOpen(true)}
+              onClick={() => navigate('/how-it-works')}
             >
-              Watch How It Works
+              How It Works
             </button>
           </motion.div>
         </div>

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Footer() {
   return (
     <footer className="relative" style={{ backgroundColor: '#0F0F0F' }}>
@@ -8,12 +10,12 @@ export default function Footer() {
             <div className="font-semibold tracking-wide">CLOUDBAR</div>
           </div>
           <nav className="flex flex-wrap gap-4 md:gap-6 text-sm">
-            <a className="hover:text-white/100" href="#">Home</a>
-            <a className="hover:text-white/100" href="#">How It Works</a>
-            <a className="hover:text-white/100" href="#">Cities</a>
-            <a className="hover:text-white/100" href="#">Bartenders</a>
-            <a className="hover:text-white/100" href="#">Press</a>
-            <a className="hover:text-white/100" href="#">Careers</a>
+            <Link className="hover:text-white/100" to="/">Home</Link>
+            <Link className="hover:text-white/100" to="/how-it-works">How It Works</Link>
+            <Link className="hover:text-white/100" to="/cities">Cities</Link>
+            <Link className="hover:text-white/100" to="/bartenders">Bartenders</Link>
+            <Link className="hover:text-white/100" to="/press">Press</Link>
+            <Link className="hover:text-white/100" to="/careers">Careers</Link>
           </nav>
         </div>
         <div className="flex items-center justify-between pt-8 text-xs text-white/60">
